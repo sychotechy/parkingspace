@@ -7,7 +7,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load video and parking positions
-cap = cv2.VideoCapture('carPark_converted.mp4')
+cap = cv2.VideoCapture('carPark_fixed.mp4')
 with open('CarParkPos', 'rb') as f:
     posList = pickle.load(f)
 
