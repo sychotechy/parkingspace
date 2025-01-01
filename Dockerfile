@@ -17,5 +17,8 @@ COPY . .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Command to run the app
-CMD ["python", "app.py"]
+# Install Gunicorn to use for production
+RUN pip install gunicorn
+
+# Command to run the app using Gunicorn
+CMD ["gunicorn", "-w", "4", "app:app"]
